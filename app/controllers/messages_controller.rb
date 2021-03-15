@@ -9,7 +9,11 @@ class MessagesController < ApplicationController
 
   def create
     Message.create(message_params)
-    redirect_to root_path
+    if @message.save
+      redirect_to root_path
+    else
+      render :new
+    end
   end
 
   private
