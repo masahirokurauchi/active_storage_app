@@ -3,5 +3,6 @@
 <% @messages.each do |message| %>
   <%= message.content %>
   <%= image_tag message.image.variant(resize: '100x100') if message.image.present? %>
+  <%= link_to "編集", edit_message_path(message.id) %>
   <br>
 <% end %>

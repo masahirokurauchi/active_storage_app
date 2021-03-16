@@ -1,6 +1,2 @@
 <h1>新規投稿ページ</h1>
-<%= form_with model: @message, local: true do |f| %>
-  <%= f.text_field :content, placeholder: 'type a message' %>
-  <%= f.file_field :image %>
-  <%= f.submit '送信' %>
-<% end %>
+<%= render partial: "form" %>
