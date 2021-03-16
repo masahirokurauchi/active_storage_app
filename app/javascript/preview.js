@@ -1,3 +1,9 @@
 document.addEventListener('DOMContentLoaded', function(){
+  // 画像を表示するためのHTMLの要素を取得
   const ImageList = document.getElementById('image-list');
+  
+  // input要素の値に変更があった場合、関数が発火
+  document.getElementById('message_image').addEventListener('change', function(e){
+    console.log(123);
+  });
 });
