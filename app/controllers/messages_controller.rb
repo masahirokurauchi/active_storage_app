@@ -22,8 +22,11 @@ class MessagesController < ApplicationController
   end
 
   def update
-    @message.update(message_params)
-    redirect_to root_path
+    if @message.update(message_params)
+      redirect_to root_path
+    else
+      render :edit
+    end
   end
 
   private
