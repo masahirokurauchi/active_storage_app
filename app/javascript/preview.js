@@ -9,5 +9,8 @@ document.addEventListener('DOMContentLoaded', function(){
     
     // URLを取得
     const blob = window.URL.createObjectURL(file);
+
+    // 画像を表示するためのdiv要素を生成
+    const imageElement = document.createElement('div');
   });
 });
