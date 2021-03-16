@@ -1,24 +1,27 @@
-document.addEventListener('DOMContentLoaded', function(){
-  // 画像を表示するためのHTMLの要素を取得
-  const ImageList = document.getElementById('image-list');
-  
-  // input要素の値に変更があった場合、関数が発火
-  document.getElementById('message_image').addEventListener('change', function(e){
-  	// 取得した画像の情報を変数に格納
-    const file = e.target.files[0];
-    
-    // URLを取得
-    const blob = window.URL.createObjectURL(file);
+// 画像投稿か編集画面なら
+if (document.URL.match( /new/ ) || document.URL.match( /edit/ )) {
+	document.addEventListener('DOMContentLoaded', function(){
+	  // 画像を表示するためのHTMLの要素を取得
+	  const ImageList = document.getElementById('image-list');
+	  
+	  // input要素の値に変更があった場合、関数が発火
+	  document.getElementById('message_image').addEventListener('change', function(e){
+	  	// 取得した画像の情報を変数に格納
+	    const file = e.target.files[0];
+	    
+	    // URLを取得
+	    const blob = window.URL.createObjectURL(file);
 
-    // 画像を表示するためのdiv要素を生成
-    const imageElement = document.createElement('div');
+	    // 画像を表示するためのdiv要素を生成
+	    const imageElement = document.createElement('div');
 
-    // 表示する画像を生成
-    const blobImage = document.createElement('img');
-    blobImage.setAttribute('src', blob);
+	    // 表示する画像を生成
+	    const blobImage = document.createElement('img');
+	    blobImage.setAttribute('src', blob);
 
-    // 生成したHTMLの要素をブラウザに表示させる
-    imageElement.appendChild(blobImage);
-    ImageList.appendChild(imageElement);
-  });
-});
+	    // 生成したHTMLの要素をブラウザに表示させる
+	    imageElement.appendChild(blobImage);
+	    ImageList.appendChild(imageElement);
+	  });
+	});
+}
