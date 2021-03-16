@@ -1,4 +1,6 @@
 class MessagesController < ApplicationController
+  before_action :set_message, only: [:edit, :update]
+
   def index 
     @messages = Message.all
   end
@@ -16,8 +18,20 @@ class MessagesController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+    @message.update(message_params)
+    redirect_to root_path
+  end
+
   private
   def message_params
     params.require(:message).permit(:content, :image)
+  end
+
+  def set_message
+    @message = Message.find(params[:id])
   end
 end
