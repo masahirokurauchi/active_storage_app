@@ -6,6 +6,12 @@ if (document.URL.match( /new/ ) || document.URL.match( /edit/ )) {
 	  
 	  // input要素の値に変更があった場合、関数が発火
 	  document.getElementById('message_image').addEventListener('change', function(e){
+	  	// 画像が表示されている場合のみ、すでに存在している画像を削除する
+        const imageContent = document.querySelector('img');
+        if (imageContent){
+          imageContent.remove();
+        }
+        
 	  	// 取得した画像の情報を変数に格納
 	    const file = e.target.files[0];
 	    
