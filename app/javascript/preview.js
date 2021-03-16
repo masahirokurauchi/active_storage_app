@@ -6,5 +6,8 @@ document.addEventListener('DOMContentLoaded', function(){
   document.getElementById('message_image').addEventListener('change', function(e){
   	// 取得した画像の情報を変数に格納
     const file = e.target.files[0];
+    
+    // URLを取得
+    const blob = window.URL.createObjectURL(file);
   });
 });
