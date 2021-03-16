@@ -4,6 +4,6 @@ document.addEventListener('DOMContentLoaded', function(){
   
   // input要素の値に変更があった場合、関数が発火
   document.getElementById('message_image').addEventListener('change', function(e){
-    console.log(123);
+    console.log(e);
   });
 });
